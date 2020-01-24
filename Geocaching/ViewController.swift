@@ -8,6 +8,8 @@
 
 import UIKit
 import GoogleMaps
+import AVFoundation
+import SwiftySound
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
 
@@ -18,6 +20,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var polyline = GMSPolyline(path: nil)
     var pathFetched = false
     var destination = CLLocationCoordinate2D(latitude: 0,longitude: 0)
+    var player: AVPlayer!
     //var destination = CLLocationCoordinate2D(latitude: 37.4259767,longitude: -122.1634626)
     @IBOutlet weak var mapViewContainer: UIView!
     @IBOutlet weak var nextButton: UIButton!
@@ -25,16 +28,21 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        nextButton.isEnabled = false
+        nextButton.backgroundColor = UIColor.black
+        nextButton.setTitle("Move to destination", for: .normal)
+        
         //Init map
         mapView = GMSMapView.map(withFrame: mapViewContainer.bounds, camera: GMSCameraPosition.camera(withLatitude: 51.050657, longitude: 10.649514, zoom: 14))
         //Add map to view
         mapViewContainer.addSubview(mapView!)
         mapView?.isMyLocationEnabled = true //Enable user location
-        
+
         //Location Manager code to fetch current location
         self.locationManager.delegate = self
+        self.locationManager.allowsBackgroundLocationUpdates = true
+        self.locationManager.distanceFilter = 10
         self.locationManager.startUpdatingLocation()
-        
     }
 
     @IBAction func onClick(_ sender: Any) {
@@ -62,14 +70,48 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func checkDistance(distance: double_t) {
+        print(distance)
         if (distance > distanceThreshold && nextButton.backgroundColor != UIColor.black) {
             nextButton.isEnabled = false
             nextButton.backgroundColor = UIColor.black
             nextButton.setTitle("Move to destination", for: .normal)
+            self.player.pause()
         } else if (distance < distanceThreshold && nextButton.backgroundColor == UIColor.black) {
             nextButton.isEnabled = true
             nextButton.backgroundColor = UIColor.init(red: 0.0, green: 122.0/255.0, blue: 1.0, alpha: 1.0)
             nextButton.setTitle("Next", for: .normal)
+            let urlstring = "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/no_curator/KieLoKaz/Free_Ganymed/KieLoKaz_-_03_-_Wow_Kielokaz_ID_359.mp3"
+            let url = NSURL(string: urlstring)
+            self.play(url: url!)
+        }
+    }
+    
+    func play(url:NSURL) {
+        
+        print("playing \(url)")
+
+        do {
+
+            let playerItem = AVPlayerItem(url: url as URL)
+
+            self.player = try AVPlayer(playerItem:playerItem)
+            player!.volume = 1.0
+            player!.play()
+            
+            do {
+                try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [.mixWithOthers, .allowAirPlay])
+                print("Playback OK")
+                try AVAudioSession.sharedInstance().setActive(true)
+                print("Session is Active")
+            } catch {
+                print(error)
+            }
+            
+        } catch let error as NSError {
+            self.player = nil
+            print(error.localizedDescription)
+        } catch {
+            print("AVAudioPlayer init failed")
         }
     }
     

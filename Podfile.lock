@@ -6,20 +6,24 @@ PODS:
     - GoogleMaps/Base
   - GooglePlaces (3.7.0):
     - GoogleMaps/Base (= 3.7.0)
+  - SwiftySound (1.1.0)
 
 DEPENDENCIES:
   - GoogleMaps
   - GooglePlaces
+  - SwiftySound
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - GoogleMaps
     - GooglePlaces
+    - SwiftySound
 
 SPEC CHECKSUMS:
   GoogleMaps: 55da829c68aa931f3ae982b9e341cc2f3d89c587
   GooglePlaces: a62077320f9d64239245af63aa1aa136393ebeb6
+  SwiftySound: eb46cc2399cf7d94f58c372f38216e15e0a6de3e
 
-PODFILE CHECKSUM: 433234344f8344ccc78c66542ffeafa6d2b7ff35
+PODFILE CHECKSUM: 986edce294e200d54730463a9feee96ff58c22b3
 
 COCOAPODS: 1.8.4

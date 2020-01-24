@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F3F80AC23DACCE600126E37 /* mapTest.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2F3F80AB23DACCE500126E37 /* mapTest.wav */; };
 		2FDC38F023CD95AA00E8D18C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC38EF23CD95AA00E8D18C /* AppDelegate.swift */; };
 		2FDC38F223CD95AA00E8D18C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC38F123CD95AA00E8D18C /* ViewController.swift */; };
 		2FDC38F523CD95AA00E8D18C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FDC38F323CD95AA00E8D18C /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		076CD3220443347F33179634 /* Pods-Geocaching.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Geocaching.release.xcconfig"; path = "Target Support Files/Pods-Geocaching/Pods-Geocaching.release.xcconfig"; sourceTree = "<group>"; };
+		2F3F80AB23DACCE500126E37 /* mapTest.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = mapTest.wav; sourceTree = "<group>"; };
 		2FDC38EC23CD95AA00E8D18C /* Geocaching.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Geocaching.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FDC38EF23CD95AA00E8D18C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2FDC38F123CD95AA00E8D18C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				2FDC38EF23CD95AA00E8D18C /* AppDelegate.swift */,
 				2FDC38F123CD95AA00E8D18C /* ViewController.swift */,
 				2FDC38F323CD95AA00E8D18C /* Main.storyboard */,
+				2F3F80AB23DACCE500126E37 /* mapTest.wav */,
 				2FDC51F723D6D36100C55200 /* OpeningScreen.swift */,
 				2FDC38F623CD95AC00E8D18C /* Assets.xcassets */,
 				2FDC38F823CD95AC00E8D18C /* LaunchScreen.storyboard */,
@@ -152,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2FDC38FA23CD95AC00E8D18C /* LaunchScreen.storyboard in Resources */,
+				2F3F80AC23DACCE600126E37 /* mapTest.wav in Resources */,
 				2FDC38F723CD95AC00E8D18C /* Assets.xcassets in Resources */,
 				2FDC38F523CD95AA00E8D18C /* Main.storyboard in Resources */,
 			);
