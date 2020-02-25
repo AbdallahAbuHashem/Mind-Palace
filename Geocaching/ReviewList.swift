@@ -9,16 +9,16 @@
 import UIKit
 
 var items = [
-    ["labelText": "First Item", "lat": 37.429702, "long": -122.173025],
-    ["labelText": "Second Item", "lat": 37.429161, "long": -122.173380],
-    ["labelText": "Third Item", "lat": 37.428653, "long": -122.173551],
-    ["labelText": "Fourth Item", "lat": 37.428308, "long": -122.173363],
-    ["labelText": "Fifth Item", "lat": 37.428104, "long": -122.174007],
-    ["labelText": "Sixth Item", "lat": 37.427695, "long": -122.173926],
-    ["labelText": "Seventh Item", "lat": 37.427469, "long": -122.173792],
-    ["labelText": "Eighth Item", "lat": 37.427073, "long": -122.173916],
-    ["labelText": "Nineth Item", "lat": 37.426756, "long": -122.174030],
-    ["labelText": "Tenth Item", "lat": 37.426257, "long": -122.173778],
+    ["labelText": "Gates Fountain", "lat": 37.429702, "long": -122.173025, "location_sound": "Gates_Fountain", "team_sound": "Green_Bay_Packers"],
+    ["labelText": "Hewlett Building", "lat": 37.42956435326761, "long": -122.1725258569226, "location_sound": "Hewlett_Building", "team_sound": "Green_Bay_Packers"],
+    ["labelText": "Herrin Hall", "lat": 37.42940939177343, "long": -122.1718014835212, "location_sound": "Herrin_Hall", "team_sound": "NewYork_Jets"],
+    ["labelText": "Math Corner", "lat": 37.42926271997531, "long": -122.1712584919556, "location_sound": "Math_Corner", "team_sound": "Kansas_City_Chiefs"],
+    ["labelText": "Jordan Hall", "lat": 37.42910163393704, "long": -122.1707071782287, "location_sound": "Jordan_Hall", "team_sound": "Baltimore_Colts"],
+    ["labelText": "The Oval", "lat": 37.428939, "long": -122.169776, "location_sound": "The_Oval", "team_sound": "Dallas_Cowboys"],
+    ["labelText": "Memorial Court", "lat": 37.428562, "long": -122.169902, "location_sound": "Memorial_Court", "team_sound": "Miami_Dolphins"],
+    ["labelText": "Memorial Court Statues", "lat": 37.4280296, "long": -122.1700336, "location_sound": "Memorial_Court_Statues", "team_sound": "Miami_Dolphins"],
+    ["labelText": "Main Quad", "lat": 37.42781225542934, "long": -122.1701390286122, "location_sound": "Main_Quad", "team_sound": "Pittsburgh_Steelers"],
+    ["labelText": "Memorial Church", "lat": 37.427297, "long": -122.170324, "location_sound": "Memorial_Church", "team_sound": "Pittsburgh_Steelers"],
 ]
 
 extension CALayer {

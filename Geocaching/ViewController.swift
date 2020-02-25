@@ -80,38 +80,31 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             nextButton.isEnabled = true
             nextButton.backgroundColor = UIColor.init(red: 0.0, green: 122.0/255.0, blue: 1.0, alpha: 1.0)
             nextButton.setTitle("Next", for: .normal)
-            let urlstring = "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/no_curator/KieLoKaz/Free_Ganymed/KieLoKaz_-_03_-_Wow_Kielokaz_ID_359.mp3"
-            let url = NSURL(string: urlstring)
-            self.play(url: url!)
+//            let urlstring = "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/no_curator/KieLoKaz/Free_Ganymed/KieLoKaz_-_03_-_Wow_Kielokaz_ID_359.mp3"
+            let url = Bundle.main.url(forResource: "Gates_Building", withExtension: "m4a", subdirectory: "Locations")
+//            let url = Bundle.main.url(forResource: "mapTest", withExtension:"wav")
+            self.play(url: url! as NSURL)
         }
     }
     
     func play(url:NSURL) {
         
         print("playing \(url)")
+            
 
+        let playerItem = AVPlayerItem(url: url as URL)
+
+        self.player = AVPlayer(playerItem:playerItem)
+        player!.volume = 1.0
+        player!.play()
+        
         do {
-
-            let playerItem = AVPlayerItem(url: url as URL)
-
-            self.player = try AVPlayer(playerItem:playerItem)
-            player!.volume = 1.0
-            player!.play()
-            
-            do {
-                try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [.mixWithOthers, .allowAirPlay])
-                print("Playback OK")
-                try AVAudioSession.sharedInstance().setActive(true)
-                print("Session is Active")
-            } catch {
-                print(error)
-            }
-            
-        } catch let error as NSError {
-            self.player = nil
-            print(error.localizedDescription)
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [.mixWithOthers, .allowAirPlay])
+            print("Playback OK")
+            try AVAudioSession.sharedInstance().setActive(true)
+            print("Session is Active")
         } catch {
-            print("AVAudioPlayer init failed")
+            print(error)
         }
     }
     

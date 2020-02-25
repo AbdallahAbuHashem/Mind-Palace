@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2F3F80AC23DACCE600126E37 /* mapTest.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2F3F80AB23DACCE500126E37 /* mapTest.wav */; };
+		2F5716FB23FFBE8A002086F0 /* Locations in Resources */ = {isa = PBXBuildFile; fileRef = 2F5716F923FFBE89002086F0 /* Locations */; };
+		2F5716FC23FFBE8A002086F0 /* Teams in Resources */ = {isa = PBXBuildFile; fileRef = 2F5716FA23FFBE89002086F0 /* Teams */; };
 		2F90779923E80CD800FD1CDF /* ReviewList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F90779823E80CD800FD1CDF /* ReviewList.swift */; };
 		2F90779B23E94FB700FD1CDF /* StartWalk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F90779A23E94FB700FD1CDF /* StartWalk.swift */; };
 		2FDC38F023CD95AA00E8D18C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC38EF23CD95AA00E8D18C /* AppDelegate.swift */; };
@@ -22,6 +24,8 @@
 /* Begin PBXFileReference section */
 		076CD3220443347F33179634 /* Pods-Geocaching.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Geocaching.release.xcconfig"; path = "Target Support Files/Pods-Geocaching/Pods-Geocaching.release.xcconfig"; sourceTree = "<group>"; };
 		2F3F80AB23DACCE500126E37 /* mapTest.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = mapTest.wav; sourceTree = "<group>"; };
+		2F5716F923FFBE89002086F0 /* Locations */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Locations; sourceTree = "<group>"; };
+		2F5716FA23FFBE89002086F0 /* Teams */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Teams; sourceTree = "<group>"; };
 		2F90779823E80CD800FD1CDF /* ReviewList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewList.swift; sourceTree = "<group>"; };
 		2F90779A23E94FB700FD1CDF /* StartWalk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartWalk.swift; sourceTree = "<group>"; };
 		2FDC38EC23CD95AA00E8D18C /* Geocaching.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Geocaching.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,6 +78,8 @@
 				2F90779823E80CD800FD1CDF /* ReviewList.swift */,
 				2FDC38F323CD95AA00E8D18C /* Main.storyboard */,
 				2F90779A23E94FB700FD1CDF /* StartWalk.swift */,
+				2F5716F923FFBE89002086F0 /* Locations */,
+				2F5716FA23FFBE89002086F0 /* Teams */,
 				2F3F80AB23DACCE500126E37 /* mapTest.wav */,
 				2FDC51F723D6D36100C55200 /* OpeningScreen.swift */,
 				2FDC38F623CD95AC00E8D18C /* Assets.xcassets */,
@@ -161,7 +167,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2FDC38FA23CD95AC00E8D18C /* LaunchScreen.storyboard in Resources */,
+				2F5716FB23FFBE8A002086F0 /* Locations in Resources */,
 				2F3F80AC23DACCE600126E37 /* mapTest.wav in Resources */,
+				2F5716FC23FFBE8A002086F0 /* Teams in Resources */,
 				2FDC38F723CD95AC00E8D18C /* Assets.xcassets in Resources */,
 				2FDC38F523CD95AA00E8D18C /* Main.storyboard in Resources */,
 			);

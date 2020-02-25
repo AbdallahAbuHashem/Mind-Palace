@@ -10,12 +10,13 @@ import UIKit
 import GoogleMaps
 import AVFoundation
 
-class StartWalk: UIViewController, CLLocationManagerDelegate {
+class StartWalk: UIViewController, CLLocationManagerDelegate,AVAudioPlayerDelegate  {
 
+    var player: AVPlayer!
     var mapView:GMSMapView?
     var locationManager = CLLocationManager()
     var APIKey = "AIzaSyDWKxNekjyN_SsRSwauPUA1_KF98SNqYNM"
-    var distanceThreshold = 40.0
+    var distanceThreshold = 1100.0
     var polyline = GMSPolyline(path: nil)
     var pathFetched = false
     var nextMarkerIndex = 0
@@ -59,7 +60,7 @@ class StartWalk: UIViewController, CLLocationManagerDelegate {
         //Location Manager code to fetch current location
         self.locationManager.delegate = self
         self.locationManager.allowsBackgroundLocationUpdates = true
-        self.locationManager.distanceFilter = 10
+        self.locationManager.distanceFilter = 2
         self.locationManager.startUpdatingLocation()
     }
     
@@ -72,26 +73,19 @@ class StartWalk: UIViewController, CLLocationManagerDelegate {
         }
     }
     
-    func speechTest(string: String) {
-        let utterance = AVSpeechUtterance(string: string)
-        utterance.voice = AVSpeechSynthesisVoice(language: "en-GB")
-
-        let synthesizer = AVSpeechSynthesizer()
-        synthesizer.speak(utterance)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         applyShadows()
         disableButton()
         initMap()
         addMarkers()
-        speechTest(string: "Hello world")
     }
     
     func updateNextDestination() {
         nextMarkerIndex += 1
-        nextDestination = CLLocationCoordinate2D(latitude: items[nextMarkerIndex]["lat"] as! CLLocationDegrees,longitude: items[nextMarkerIndex]["long"] as! CLLocationDegrees)
+        if (nextMarkerIndex != 10) {
+            nextDestination = CLLocationCoordinate2D(latitude: items[nextMarkerIndex]["lat"] as! CLLocationDegrees,longitude: items[nextMarkerIndex]["long"] as! CLLocationDegrees)
+        }
     }
     
     //Location Manager delegates
@@ -104,7 +98,9 @@ class StartWalk: UIViewController, CLLocationManagerDelegate {
         self.mapView?.animate(to: camera)
         
         let origin = location?.coordinate
-        self.checkDistance(distance: self.distanceInMeterBetweenPoints(lat1: (origin?.latitude)!, lon1: (origin?.longitude)!, lat2: self.nextDestination.latitude, lon2: self.nextDestination.longitude))
+        if (nextMarkerIndex != 10) {
+            self.checkDistance(distance: self.distanceInMeterBetweenPoints(lat1: (origin?.latitude)!, lon1: (origin?.longitude)!, lat2: self.nextDestination.latitude, lon2: self.nextDestination.longitude))
+        }
 //        self.locationManager.stopUpdatingLocation()
         
     }
@@ -115,8 +111,43 @@ class StartWalk: UIViewController, CLLocationManagerDelegate {
 //            disableButton()
         } else if (distance < distanceThreshold && showImage.backgroundColor == disableColor) {
 //            enableButton()
-            speechTest(string: items[nextMarkerIndex]["labelText"] as! String)
+            self.play()
             updateNextDestination()
+            
+        }
+    }
+    
+    @objc func playerDidFinishPlaying(note: NSNotification) {
+        print("Over")
+        let marker = nextMarkerIndex - 1
+        print(marker)
+        let url = Bundle.main.url(forResource: (items[marker]["team_sound"] as! String), withExtension: "m4a", subdirectory: "Teams")
+        let playerItem = AVPlayerItem(url: url!)
+        self.player = AVPlayer(playerItem:playerItem)
+        player!.volume = 1.0
+        player!.play()
+    }
+    
+    func play() {
+        let marker = nextMarkerIndex
+        let url = Bundle.main.url(forResource: (items[marker]["location_sound"] as! String), withExtension: "m4a", subdirectory: "Locations")
+
+        let playerItem = AVPlayerItem(url: url!)
+        
+//        NotificationCenter.default.addObserver(self, selector: Selector(("playerDidFinishPlaying:")), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: playerItem)
+
+        self.player = AVPlayer(playerItem:playerItem)
+        NotificationCenter.default.addObserver(self, selector: #selector(playerDidFinishPlaying), name: .AVPlayerItemDidPlayToEndTime, object: self.player.currentItem)
+        player!.volume = 1.0
+        player!.play()
+        
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [.mixWithOthers, .allowAirPlay])
+            print("Playback OK")
+            try AVAudioSession.sharedInstance().setActive(true)
+            print("Session is Active")
+        } catch {
+            print(error)
         }
     }
     
