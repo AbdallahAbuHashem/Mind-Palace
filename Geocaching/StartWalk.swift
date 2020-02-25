@@ -16,7 +16,7 @@ class StartWalk: UIViewController, CLLocationManagerDelegate,AVAudioPlayerDelega
     var mapView:GMSMapView?
     var locationManager = CLLocationManager()
     var APIKey = "AIzaSyDWKxNekjyN_SsRSwauPUA1_KF98SNqYNM"
-    var distanceThreshold = 1100.0
+    var distanceThreshold = 20.0
     var polyline = GMSPolyline(path: nil)
     var pathFetched = false
     var nextMarkerIndex = 0
