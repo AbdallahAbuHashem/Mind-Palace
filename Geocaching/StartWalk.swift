@@ -73,6 +73,23 @@ class StartWalk: UIViewController, CLLocationManagerDelegate,AVAudioPlayerDelega
         }
     }
     
+    func setNotifications(title: String, subtext: String) {
+        
+        let content = UNMutableNotificationContent()
+        content.title = NSString.localizedUserNotificationString(forKey: title, arguments: nil)
+        content.body = NSString.localizedUserNotificationString(forKey: subtext,arguments: nil)
+        content.categoryIdentifier = "Geocaching"
+        let time = 1.0
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: time, repeats: false)
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        let center = UNUserNotificationCenter.current()
+        center.add(request) { (error : Error?) in
+          if let theError = error {
+            NSLog(theError.localizedDescription)
+          }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         applyShadows()
@@ -105,12 +122,26 @@ class StartWalk: UIViewController, CLLocationManagerDelegate,AVAudioPlayerDelega
         
     }
     
+    func scheduleNotification() {
+        let center = UNUserNotificationCenter.current()
+        center.getNotificationSettings { settings in
+            guard settings.authorizationStatus == .authorized else { return }
+
+            if settings.alertSetting == .enabled {
+                self.setNotifications(title: items[self.nextMarkerIndex]["labelText"] as! String, subtext: items[self.nextMarkerIndex]["labelText"] as! String)
+            } else {
+                self.setNotifications(title: items[self.nextMarkerIndex]["labelText"] as! String, subtext: items[self.nextMarkerIndex]["labelText"] as! String)
+            }
+        }
+    }
+    
     func checkDistance(distance: double_t) {
         print(distance)
         if (distance > distanceThreshold && showImage.backgroundColor != UIColor.systemBlue) {
 //            disableButton()
         } else if (distance < distanceThreshold && showImage.backgroundColor == disableColor) {
 //            enableButton()
+            self.scheduleNotification()
             self.play()
             updateNextDestination()
             
@@ -118,9 +149,7 @@ class StartWalk: UIViewController, CLLocationManagerDelegate,AVAudioPlayerDelega
     }
     
     @objc func playerDidFinishPlaying(note: NSNotification) {
-        print("Over")
         let marker = nextMarkerIndex - 1
-        print(marker)
         let url = Bundle.main.url(forResource: (items[marker]["team_sound"] as! String), withExtension: "m4a", subdirectory: "Teams")
         let playerItem = AVPlayerItem(url: url!)
         self.player = AVPlayer(playerItem:playerItem)
@@ -131,11 +160,7 @@ class StartWalk: UIViewController, CLLocationManagerDelegate,AVAudioPlayerDelega
     func play() {
         let marker = nextMarkerIndex
         let url = Bundle.main.url(forResource: (items[marker]["location_sound"] as! String), withExtension: "m4a", subdirectory: "Locations")
-
         let playerItem = AVPlayerItem(url: url!)
-        
-//        NotificationCenter.default.addObserver(self, selector: Selector(("playerDidFinishPlaying:")), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: playerItem)
-
         self.player = AVPlayer(playerItem:playerItem)
         NotificationCenter.default.addObserver(self, selector: #selector(playerDidFinishPlaying), name: .AVPlayerItemDidPlayToEndTime, object: self.player.currentItem)
         player!.volume = 1.0

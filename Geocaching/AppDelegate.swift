@@ -17,6 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+            // Enable or disable features based on authorization.
+        }
+        
         GMSServices.provideAPIKey("AIzaSyDWKxNekjyN_SsRSwauPUA1_KF98SNqYNM")
         return true
     }
