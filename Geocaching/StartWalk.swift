@@ -22,7 +22,7 @@ class StartWalk: UIViewController, CLLocationManagerDelegate,AVAudioPlayerDelega
     var nextMarkerIndex = 0
     var nextDestination = CLLocationCoordinate2D(latitude: items[0]["lat"] as! CLLocationDegrees,longitude: items[0]["long"] as! CLLocationDegrees)
     var disableColor = UIColor(red: 0.514, green: 0.514, blue: 0.514, alpha: 1)
-    
+    var soundOn = false
     @IBOutlet weak var showImage: UIButton!
     @IBOutlet weak var mapViewContainer: UIView!
     @IBAction func dismissModal(_ sender: Any) {
@@ -128,13 +128,13 @@ class StartWalk: UIViewController, CLLocationManagerDelegate,AVAudioPlayerDelega
         center.getNotificationSettings { settings in
             guard settings.authorizationStatus == .authorized else { return }
 
-            let loc = items[self.nextMarkerIndex]["labelText"] as! String
+            let loc = items[self.nextMarkerIndex - 1]["labelText"] as! String
             let dis = NSString(format: "%.2f", self.distanceThreshold) as String
             let subtext = "You are within " + dis + " from " + loc
             if settings.alertSetting == .enabled {
-                self.setNotifications(title: items[self.nextMarkerIndex]["teamName"] as! String, subtext: subtext, team: items[self.nextMarkerIndex]["resource"] as! String)
+                self.setNotifications(title: items[self.nextMarkerIndex - 1]["teamName"] as! String, subtext: subtext, team: items[self.nextMarkerIndex - 1]["resource"] as! String)
             } else {
-                self.setNotifications(title: items[self.nextMarkerIndex]["teamName"] as! String, subtext: subtext, team: items[self.nextMarkerIndex]["resource"] as! String)
+                self.setNotifications(title: items[self.nextMarkerIndex - 1]["teamName"] as! String, subtext: subtext, team: items[self.nextMarkerIndex - 1]["resource"] as! String)
             }
         }
     }
@@ -146,7 +146,9 @@ class StartWalk: UIViewController, CLLocationManagerDelegate,AVAudioPlayerDelega
         } else if (distance < distanceThreshold && showImage.backgroundColor == disableColor) {
 //            enableButton()
             self.scheduleNotification()
-            self.play()
+            if (self.soundOn) {
+                self.play()
+            }
             updateNextDestination()
             
         }

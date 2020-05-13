@@ -83,7 +83,7 @@ class ReviewList: UIViewController {
         for (index, item) in items.enumerated() {
             let label = UILabel(frame: CGRect(x: 27, y: 17, width: 241, height: 21))
             label.textAlignment = .left
-            label.text = item["labelText"] as? String
+            label.text = item["teamName"] as? String
             self.itemsList[index].addSubview(label)
         }
     }
@@ -93,6 +93,7 @@ class ReviewList: UIViewController {
         
         self.itemsList = [firstItem, secondItem, thirdItem, fourthItem, fifthItem, sixthItem, seventhItem, eighthItem, ninethItem, tenthItem]
         self.heightsList = [firstItemHeight, secondItemHeight, thirdItemHeight, fourthItemHeight, fifthItemHeight, sixthItemHeight, seventhItemHeight, eighthItemHeight, ninethItemHeight, tenthItemHeight]
+        
         populateLabels()
         
         for item in self.itemsList {

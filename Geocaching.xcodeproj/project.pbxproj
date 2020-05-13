@@ -21,6 +21,8 @@
 		2F3F80AC23DACCE600126E37 /* mapTest.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2F3F80AB23DACCE500126E37 /* mapTest.wav */; };
 		2F5716FB23FFBE8A002086F0 /* Locations in Resources */ = {isa = PBXBuildFile; fileRef = 2F5716F923FFBE89002086F0 /* Locations */; };
 		2F5716FC23FFBE8A002086F0 /* Teams in Resources */ = {isa = PBXBuildFile; fileRef = 2F5716FA23FFBE89002086F0 /* Teams */; };
+		2F85A25D246C287F0082A718 /* ReviewPOI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F85A25C246C287F0082A718 /* ReviewPOI.swift */; };
+		2F85A25F246C2D220082A718 /* ChoosePOI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F85A25E246C2D220082A718 /* ChoosePOI.swift */; };
 		2F90779923E80CD800FD1CDF /* ReviewList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F90779823E80CD800FD1CDF /* ReviewList.swift */; };
 		2F90779B23E94FB700FD1CDF /* StartWalk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F90779A23E94FB700FD1CDF /* StartWalk.swift */; };
 		2FDC38F023CD95AA00E8D18C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC38EF23CD95AA00E8D18C /* AppDelegate.swift */; };
@@ -93,6 +95,8 @@
 		2F3F80AB23DACCE500126E37 /* mapTest.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = mapTest.wav; sourceTree = "<group>"; };
 		2F5716F923FFBE89002086F0 /* Locations */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Locations; sourceTree = "<group>"; };
 		2F5716FA23FFBE89002086F0 /* Teams */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Teams; sourceTree = "<group>"; };
+		2F85A25C246C287F0082A718 /* ReviewPOI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewPOI.swift; sourceTree = "<group>"; };
+		2F85A25E246C2D220082A718 /* ChoosePOI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePOI.swift; sourceTree = "<group>"; };
 		2F90779823E80CD800FD1CDF /* ReviewList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewList.swift; sourceTree = "<group>"; };
 		2F90779A23E94FB700FD1CDF /* StartWalk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartWalk.swift; sourceTree = "<group>"; };
 		2FDC38EC23CD95AA00E8D18C /* Geocaching.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Geocaching.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -188,7 +192,9 @@
 				2FDC38EF23CD95AA00E8D18C /* AppDelegate.swift */,
 				2FDC38F123CD95AA00E8D18C /* ViewController.swift */,
 				2F90779823E80CD800FD1CDF /* ReviewList.swift */,
+				2F85A25C246C287F0082A718 /* ReviewPOI.swift */,
 				2FDC38F323CD95AA00E8D18C /* Main.storyboard */,
+				2F85A25E246C2D220082A718 /* ChoosePOI.swift */,
 				2F90779A23E94FB700FD1CDF /* StartWalk.swift */,
 				2F5716F923FFBE89002086F0 /* Locations */,
 				2F5716FA23FFBE89002086F0 /* Teams */,
@@ -410,10 +416,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F85A25F246C2D220082A718 /* ChoosePOI.swift in Sources */,
 				2FDC38F223CD95AA00E8D18C /* ViewController.swift in Sources */,
 				2F90779923E80CD800FD1CDF /* ReviewList.swift in Sources */,
 				2FDC51F823D6D36100C55200 /* OpeningScreen.swift in Sources */,
 				2FDC38F023CD95AA00E8D18C /* AppDelegate.swift in Sources */,
+				2F85A25D246C287F0082A718 /* ReviewPOI.swift in Sources */,
 				2F90779B23E94FB700FD1CDF /* StartWalk.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
