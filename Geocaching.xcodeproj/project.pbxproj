@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F05067C2452D597000D1835 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F05067A2452D597000D1835 /* Interface.storyboard */; };
+		2F05067E2452D598000D1835 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F05067D2452D598000D1835 /* Assets.xcassets */; };
+		2F0506852452D598000D1835 /* MindPalaceNotifications Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2F0506842452D598000D1835 /* MindPalaceNotifications Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2F05068A2452D598000D1835 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0506892452D598000D1835 /* ContentView.swift */; };
+		2F05068C2452D598000D1835 /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F05068B2452D598000D1835 /* HostingController.swift */; };
+		2F05068E2452D598000D1835 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F05068D2452D598000D1835 /* ExtensionDelegate.swift */; };
+		2F0506902452D598000D1835 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F05068F2452D598000D1835 /* NotificationController.swift */; };
+		2F0506922452D598000D1835 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0506912452D598000D1835 /* NotificationView.swift */; };
+		2F0506942452D599000D1835 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F0506932452D599000D1835 /* Assets.xcassets */; };
+		2F0506972452D599000D1835 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F0506962452D599000D1835 /* Preview Assets.xcassets */; };
+		2F05069C2452D599000D1835 /* MindPalaceNotifications.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 2F0506782452D597000D1835 /* MindPalaceNotifications.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2F3F80AC23DACCE600126E37 /* mapTest.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2F3F80AB23DACCE500126E37 /* mapTest.wav */; };
 		2F5716FB23FFBE8A002086F0 /* Locations in Resources */ = {isa = PBXBuildFile; fileRef = 2F5716F923FFBE89002086F0 /* Locations */; };
 		2F5716FC23FFBE8A002086F0 /* Teams in Resources */ = {isa = PBXBuildFile; fileRef = 2F5716FA23FFBE89002086F0 /* Teams */; };
@@ -21,8 +32,64 @@
 		A470844538051C1E1EA57969 /* libPods-Geocaching.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E2611EBA32B598C26534220A /* libPods-Geocaching.a */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		2F0506862452D598000D1835 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2FDC38E423CD95AA00E8D18C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2F0506832452D598000D1835;
+			remoteInfo = "MindPalaceNotifications Extension";
+		};
+		2F05069A2452D599000D1835 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2FDC38E423CD95AA00E8D18C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2F0506772452D597000D1835;
+			remoteInfo = MindPalaceNotifications;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2F05069D2452D59A000D1835 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				2F05069C2452D599000D1835 /* MindPalaceNotifications.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F0506A02452D59A000D1835 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				2F0506852452D598000D1835 /* MindPalaceNotifications Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		076CD3220443347F33179634 /* Pods-Geocaching.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Geocaching.release.xcconfig"; path = "Target Support Files/Pods-Geocaching/Pods-Geocaching.release.xcconfig"; sourceTree = "<group>"; };
+		2F0506782452D597000D1835 /* MindPalaceNotifications.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MindPalaceNotifications.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F05067B2452D597000D1835 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		2F05067D2452D598000D1835 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2F05067F2452D598000D1835 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2F0506842452D598000D1835 /* MindPalaceNotifications Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "MindPalaceNotifications Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F0506892452D598000D1835 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2F05068B2452D598000D1835 /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
+		2F05068D2452D598000D1835 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		2F05068F2452D598000D1835 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		2F0506912452D598000D1835 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		2F0506932452D599000D1835 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2F0506962452D599000D1835 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2F0506982452D599000D1835 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2F0506992452D599000D1835 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		2F3F80AB23DACCE500126E37 /* mapTest.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = mapTest.wav; sourceTree = "<group>"; };
 		2F5716F923FFBE89002086F0 /* Locations */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Locations; sourceTree = "<group>"; };
 		2F5716FA23FFBE89002086F0 /* Teams */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Teams; sourceTree = "<group>"; };
@@ -41,6 +108,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2F0506812452D598000D1835 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2FDC38E923CD95AA00E8D18C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -52,10 +126,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F0506792452D597000D1835 /* MindPalaceNotifications */ = {
+			isa = PBXGroup;
+			children = (
+				2F05067A2452D597000D1835 /* Interface.storyboard */,
+				2F05067D2452D598000D1835 /* Assets.xcassets */,
+				2F05067F2452D598000D1835 /* Info.plist */,
+			);
+			path = MindPalaceNotifications;
+			sourceTree = "<group>";
+		};
+		2F0506882452D598000D1835 /* MindPalaceNotifications Extension */ = {
+			isa = PBXGroup;
+			children = (
+				2F0506892452D598000D1835 /* ContentView.swift */,
+				2F05068B2452D598000D1835 /* HostingController.swift */,
+				2F05068D2452D598000D1835 /* ExtensionDelegate.swift */,
+				2F05068F2452D598000D1835 /* NotificationController.swift */,
+				2F0506912452D598000D1835 /* NotificationView.swift */,
+				2F0506932452D599000D1835 /* Assets.xcassets */,
+				2F0506982452D599000D1835 /* Info.plist */,
+				2F0506992452D599000D1835 /* PushNotificationPayload.apns */,
+				2F0506952452D599000D1835 /* Preview Content */,
+			);
+			path = "MindPalaceNotifications Extension";
+			sourceTree = "<group>";
+		};
+		2F0506952452D599000D1835 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				2F0506962452D599000D1835 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		2FDC38E323CD95AA00E8D18C = {
 			isa = PBXGroup;
 			children = (
 				2FDC38EE23CD95AA00E8D18C /* Geocaching */,
+				2F0506792452D597000D1835 /* MindPalaceNotifications */,
+				2F0506882452D598000D1835 /* MindPalaceNotifications Extension */,
 				2FDC38ED23CD95AA00E8D18C /* Products */,
 				C88662DCF08820823C3C9A3D /* Pods */,
 				B4E09C5FF9769D5E45C1EBD9 /* Frameworks */,
@@ -66,6 +176,8 @@
 			isa = PBXGroup;
 			children = (
 				2FDC38EC23CD95AA00E8D18C /* Geocaching.app */,
+				2F0506782452D597000D1835 /* MindPalaceNotifications.app */,
+				2F0506842452D598000D1835 /* MindPalaceNotifications Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -109,6 +221,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		2F0506772452D597000D1835 /* MindPalaceNotifications */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F0506A42452D59A000D1835 /* Build configuration list for PBXNativeTarget "MindPalaceNotifications" */;
+			buildPhases = (
+				2F0506762452D597000D1835 /* Resources */,
+				2F0506A02452D59A000D1835 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2F0506872452D598000D1835 /* PBXTargetDependency */,
+			);
+			name = MindPalaceNotifications;
+			productName = MindPalaceNotifications;
+			productReference = 2F0506782452D597000D1835 /* MindPalaceNotifications.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		2F0506832452D598000D1835 /* MindPalaceNotifications Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F0506A32452D59A000D1835 /* Build configuration list for PBXNativeTarget "MindPalaceNotifications Extension" */;
+			buildPhases = (
+				2F0506802452D598000D1835 /* Sources */,
+				2F0506812452D598000D1835 /* Frameworks */,
+				2F0506822452D598000D1835 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MindPalaceNotifications Extension";
+			productName = "MindPalaceNotifications Extension";
+			productReference = 2F0506842452D598000D1835 /* MindPalaceNotifications Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		2FDC38EB23CD95AA00E8D18C /* Geocaching */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2FDC38FE23CD95AC00E8D18C /* Build configuration list for PBXNativeTarget "Geocaching" */;
@@ -118,10 +264,12 @@
 				2FDC38E923CD95AA00E8D18C /* Frameworks */,
 				2FDC38EA23CD95AA00E8D18C /* Resources */,
 				D1F35A012D7A2885A392834B /* [CP] Copy Pods Resources */,
+				2F05069D2452D59A000D1835 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				2F05069B2452D599000D1835 /* PBXTargetDependency */,
 			);
 			name = Geocaching;
 			productName = Geocaching;
@@ -134,10 +282,16 @@
 		2FDC38E423CD95AA00E8D18C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1010;
+				LastSwiftUpdateCheck = 1140;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Abdallah AbuHashem";
 				TargetAttributes = {
+					2F0506772452D597000D1835 = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
+					2F0506832452D598000D1835 = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
 					2FDC38EB23CD95AA00E8D18C = {
 						CreatedOnToolsVersion = 10.1;
 					};
@@ -157,11 +311,31 @@
 			projectRoot = "";
 			targets = (
 				2FDC38EB23CD95AA00E8D18C /* Geocaching */,
+				2F0506772452D597000D1835 /* MindPalaceNotifications */,
+				2F0506832452D598000D1835 /* MindPalaceNotifications Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		2F0506762452D597000D1835 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F05067E2452D598000D1835 /* Assets.xcassets in Resources */,
+				2F05067C2452D597000D1835 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F0506822452D598000D1835 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F0506972452D599000D1835 /* Preview Assets.xcassets in Resources */,
+				2F0506942452D599000D1835 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2FDC38EA23CD95AA00E8D18C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -220,6 +394,18 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2F0506802452D598000D1835 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F05068C2452D598000D1835 /* HostingController.swift in Sources */,
+				2F05068A2452D598000D1835 /* ContentView.swift in Sources */,
+				2F0506902452D598000D1835 /* NotificationController.swift in Sources */,
+				2F05068E2452D598000D1835 /* ExtensionDelegate.swift in Sources */,
+				2F0506922452D598000D1835 /* NotificationView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2FDC38E823CD95AA00E8D18C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -234,7 +420,28 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		2F0506872452D598000D1835 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2F0506832452D598000D1835 /* MindPalaceNotifications Extension */;
+			targetProxy = 2F0506862452D598000D1835 /* PBXContainerItemProxy */;
+		};
+		2F05069B2452D599000D1835 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2F0506772452D597000D1835 /* MindPalaceNotifications */;
+			targetProxy = 2F05069A2452D599000D1835 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		2F05067A2452D597000D1835 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2F05067B2452D597000D1835 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 		2FDC38F323CD95AA00E8D18C /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -254,6 +461,92 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		2F05069E2452D59A000D1835 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 798T8C252Q;
+				IBSC_MODULE = MindPalaceNotifications_Extension;
+				INFOPLIST_FILE = MindPalaceNotifications/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = io.Abdallah.Geocaching.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+			};
+			name = Debug;
+		};
+		2F05069F2452D59A000D1835 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 798T8C252Q;
+				IBSC_MODULE = MindPalaceNotifications_Extension;
+				INFOPLIST_FILE = MindPalaceNotifications/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = io.Abdallah.Geocaching.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+			};
+			name = Release;
+		};
+		2F0506A12452D59A000D1835 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"MindPalaceNotifications Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = 798T8C252Q;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "MindPalaceNotifications Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.Abdallah.Geocaching.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+			};
+			name = Debug;
+		};
+		2F0506A22452D59A000D1835 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"MindPalaceNotifications Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = 798T8C252Q;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "MindPalaceNotifications Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.Abdallah.Geocaching.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+			};
+			name = Release;
+		};
 		2FDC38FC23CD95AC00E8D18C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -411,6 +704,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2F0506A32452D59A000D1835 /* Build configuration list for PBXNativeTarget "MindPalaceNotifications Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F0506A12452D59A000D1835 /* Debug */,
+				2F0506A22452D59A000D1835 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2F0506A42452D59A000D1835 /* Build configuration list for PBXNativeTarget "MindPalaceNotifications" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F05069E2452D59A000D1835 /* Debug */,
+				2F05069F2452D59A000D1835 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2FDC38E723CD95AA00E8D18C /* Build configuration list for PBXProject "Geocaching" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

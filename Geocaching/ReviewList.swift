@@ -9,16 +9,16 @@
 import UIKit
 
 var items = [
-    ["labelText": "Gates Fountain", "lat": 37.429702, "long": -122.173025, "location_sound": "Gates_Fountain", "team_sound": "Green_Bay_Packers"],
-    ["labelText": "Hewlett Building", "lat": 37.42956435326761, "long": -122.1725258569226, "location_sound": "Hewlett_Building", "team_sound": "Green_Bay_Packers"],
-    ["labelText": "Herrin Hall", "lat": 37.42940939177343, "long": -122.1718014835212, "location_sound": "Herrin_Hall", "team_sound": "NewYork_Jets"],
-    ["labelText": "Math Corner", "lat": 37.42926271997531, "long": -122.1712584919556, "location_sound": "Math_Corner", "team_sound": "Kansas_City_Chiefs"],
-    ["labelText": "Jordan Hall", "lat": 37.42910163393704, "long": -122.1707071782287, "location_sound": "Jordan_Hall", "team_sound": "Baltimore_Colts"],
-    ["labelText": "The Oval", "lat": 37.428939, "long": -122.169776, "location_sound": "The_Oval", "team_sound": "Dallas_Cowboys"],
-    ["labelText": "Memorial Court", "lat": 37.428562, "long": -122.169902, "location_sound": "Memorial_Court", "team_sound": "Miami_Dolphins"],
-    ["labelText": "Memorial Court Statues", "lat": 37.4280296, "long": -122.1700336, "location_sound": "Memorial_Court_Statues", "team_sound": "Miami_Dolphins"],
-    ["labelText": "Main Quad", "lat": 37.42781225542934, "long": -122.1701390286122, "location_sound": "Main_Quad", "team_sound": "Pittsburgh_Steelers"],
-    ["labelText": "Memorial Church", "lat": 37.427297, "long": -122.170324, "location_sound": "Memorial_Church", "team_sound": "Pittsburgh_Steelers"],
+    ["labelText": "Gates Fountain", "teamName": "Green Bay Packers", "lat": 37.429702, "long": -122.173025, "location_sound": "Gates_Fountain", "team_sound": "Green_Bay_Packers", "resource": "packers"],
+    ["labelText": "Hewlett Building", "teamName": "Green Bay Packers", "lat": 37.42956435326761, "long": -122.1725258569226, "location_sound": "Hewlett_Building", "team_sound": "Green_Bay_Packers", "resource": "packers"],
+    ["labelText": "Herrin Hall", "teamName": "New York Jets", "lat": 37.42940939177343, "long": -122.1718014835212, "location_sound": "Herrin_Hall", "team_sound": "NewYork_Jets", "resource": "jets"],
+    ["labelText": "Math Corner", "teamName": "Kansas City Chiefs", "lat": 37.42926271997531, "long": -122.1712584919556, "location_sound": "Math_Corner", "team_sound": "Kansas_City_Chiefs", "resource": "chiefs"],
+    ["labelText": "Jordan Hall", "teamName": "Baltimore Colts", "lat": 37.42910163393704, "long": -122.1707071782287, "location_sound": "Jordan_Hall", "team_sound": "Baltimore_Colts", "resource": "colts"],
+    ["labelText": "The Oval", "teamName": "Dallas Cowboys", "lat": 37.428939, "long": -122.169776, "location_sound": "The_Oval", "team_sound": "Dallas_Cowboys", "resource": "cowboys"],
+    ["labelText": "Memorial Court", "teamName": "Miami Dolphins", "lat": 37.428562, "long": -122.169902, "location_sound": "Memorial_Court", "team_sound": "Miami_Dolphins", "resource": "dolphins"],
+    ["labelText": "Memorial Court Statues", "teamName": "Miami Dolphins", "lat": 37.4280296, "long": -122.1700336, "location_sound": "Memorial_Court_Statues", "team_sound": "Miami_Dolphins", "resource": "dolphins"],
+    ["labelText": "Main Quad", "teamName": "Pittsburgh Steelers", "lat": 37.42781225542934, "long": -122.1701390286122, "location_sound": "Main_Quad", "team_sound": "Pittsburgh_Steelers", "resource": "steelers"],
+    ["labelText": "Memorial Church", "teamName": "Pittsburgh Steelers", "lat": 37.427297, "long": -122.170324, "location_sound": "Memorial_Church", "team_sound": "Pittsburgh_Steelers", "resource": "steelers"],
 ]
 
 extension CALayer {

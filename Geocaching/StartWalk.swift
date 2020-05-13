@@ -73,11 +73,12 @@ class StartWalk: UIViewController, CLLocationManagerDelegate,AVAudioPlayerDelega
         }
     }
     
-    func setNotifications(title: String, subtext: String) {
+    func setNotifications(title: String, subtext: String, team: String) {
         
         let content = UNMutableNotificationContent()
         content.title = NSString.localizedUserNotificationString(forKey: title, arguments: nil)
         content.body = NSString.localizedUserNotificationString(forKey: subtext,arguments: nil)
+        content.userInfo["team"] = team
         content.categoryIdentifier = "Geocaching"
         let time = 1.0
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: time, repeats: false)
@@ -127,10 +128,13 @@ class StartWalk: UIViewController, CLLocationManagerDelegate,AVAudioPlayerDelega
         center.getNotificationSettings { settings in
             guard settings.authorizationStatus == .authorized else { return }
 
+            let loc = items[self.nextMarkerIndex]["labelText"] as! String
+            let dis = NSString(format: "%.2f", self.distanceThreshold) as String
+            let subtext = "You are within " + dis + " from " + loc
             if settings.alertSetting == .enabled {
-                self.setNotifications(title: items[self.nextMarkerIndex]["labelText"] as! String, subtext: items[self.nextMarkerIndex]["labelText"] as! String)
+                self.setNotifications(title: items[self.nextMarkerIndex]["teamName"] as! String, subtext: subtext, team: items[self.nextMarkerIndex]["resource"] as! String)
             } else {
-                self.setNotifications(title: items[self.nextMarkerIndex]["labelText"] as! String, subtext: items[self.nextMarkerIndex]["labelText"] as! String)
+                self.setNotifications(title: items[self.nextMarkerIndex]["teamName"] as! String, subtext: subtext, team: items[self.nextMarkerIndex]["resource"] as! String)
             }
         }
     }
